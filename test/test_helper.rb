@@ -2,9 +2,9 @@ $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 require "simplecov_post_formatter"
 
 require "minitest/autorun"
-require "mocha"
+require 'minitest/unit'
+require "mocha/minitest"
 require "simplecov"
-require "webmock/minitest"
 
 SimpleCov.start do
   module SimplecovPostFormatter
@@ -23,5 +23,10 @@ end
 SimplecovPostFormatter.configure do |config|
   config.post_url = "www.test-post.com"
   config.repo_url = "www.test-repo.com"
+end
+
+
+def mock_result(total_cov)
+  stub(source_files: stub(covered_percent: total_cov))
 end
 
