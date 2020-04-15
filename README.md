@@ -1,8 +1,6 @@
-# Simplecov::Post::Formatter
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/simplecov/post/formatter`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# SimplecovPostFormatter
+This gem is a formatter for SimpleCov. It sends the total test coverage from SimpleCov to a url via a post request.
+It is heavily inspired by the formatter in MarcGrimme's simplecov-small-badge: https://github.com/MarcGrimme/simplecov-small-badge
 
 ## Installation
 
