@@ -8,10 +8,12 @@ module SimplecovBadger
     end
 
     def format(result)
-      RestClient.post(
-        config.post_url,
-        { percentage: result.source_files.covered_percent.round(2), repo_url: config.encoded_repo_url }
-      )
+      if config.run_when.call
+        RestClient.post(
+          config.post_url,
+          { percentage: result.source_files.covered_percent.round(2), repo_url: config.encoded_repo_url }
+        )
+      end
     end
   end
 end
