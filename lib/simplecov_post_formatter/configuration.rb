@@ -1,9 +1,12 @@
 module SimplecovPostFormatter
   class Configuration
+    # TODO:
+    # Når run_when er true, så kører vi (lambda)
+
     def self.options
       {
-        post_url: nil,
-        repo_url: nil
+        post_url: "coverage.traels.it/badges",
+        repo_url: `git remote -v`.split(" ")[1]
       }
     end
 
