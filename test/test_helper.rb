@@ -6,11 +6,6 @@ require "mocha/minitest"
 require "simplecov"
 
 SimpleCov.start do
-  module SimplecovPostFormatter
-    class Formatter
-    end
-  end
-
   SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
     [
       SimpleCov::Formatter::HTMLFormatter,
@@ -22,6 +17,7 @@ end
 SimplecovPostFormatter.configure do |config|
   config.post_url = "www.test-post.com"
   config.repo_url = "www.test-repo.com"
+  config.run_when = -> { true }
 end
 
 

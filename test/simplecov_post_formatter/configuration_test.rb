@@ -21,5 +21,13 @@ class ConfigurationTest < Minitest::Test
 
       assert_equal "https://github.com/traels-it/simplecov-post-formatter.git", configuration.repo_url
     end
+
+    it "has a run_when lamda, that only resolves to true, when in the master git branch" do
+      skip "this test only works on the master branch"
+
+      configuration = SimplecovPostFormatter::Configuration.new
+
+      assert configuration.run_when.call
+    end
   end
 end
