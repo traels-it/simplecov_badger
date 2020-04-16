@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-There are very few things to do, before you can use the gem. The only necessary setup is to add the `SimplevocBadger::Formatter` to `SimpleCov`'s formatters in the same place you start `SimpleCov`:
+There are very few things to do, before you can use the gem. The only necessary setup is to add the `SimplecovBadger::Formatter` to `SimpleCov`'s formatters in the same place you start `SimpleCov`:
 
 ```ruby
 SimpleCov.start do
