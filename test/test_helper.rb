@@ -17,7 +17,7 @@ end
 SimplecovBadger.configure do |config|
   config.post_url = "www.test-post.com"
   config.repo_url = "www.test-repo.com"
-  config.run_when = -> { true }
+  config.run_when = -> { false }
 end
 
 
