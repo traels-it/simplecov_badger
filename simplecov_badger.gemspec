@@ -28,8 +28,8 @@ Gem::Specification.new do |spec|
 
   # dependencies
   spec.add_dependency "simplecov", "~> 0.18.5"
-  spec.add_dependency "rest-client"
+  spec.add_dependency "rest-client", "~> 2.1.0"
 
-  spec.add_development_dependency "m"
-  spec.add_development_dependency "mocha"
+  spec.add_development_dependency "m", "~> 1.5.1"
+  spec.add_development_dependency "mocha", "~> 1.11.2"
 end

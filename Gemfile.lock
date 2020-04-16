@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     simplecov_badger (0.0.1)
-      rest-client
+      rest-client (~> 2.1.0)
       simplecov (~> 0.18.5)
 
 GEM
@@ -42,9 +42,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  m
+  m (~> 1.5.1)
   minitest (~> 5.0)
-  mocha
+  mocha (~> 1.11.2)
   rake (~> 12.0)
   simplecov_badger!
 
