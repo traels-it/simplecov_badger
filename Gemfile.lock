@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simplecov-post-formatter (0.0.1)
+    simplecov_badger (0.0.1)
       rest-client
       simplecov (~> 0.18.5)
 
@@ -46,7 +46,7 @@ DEPENDENCIES
   minitest (~> 5.0)
   mocha
   rake (~> 12.0)
-  simplecov-post-formatter!
+  simplecov_badger!
 
 BUNDLED WITH
    2.1.4

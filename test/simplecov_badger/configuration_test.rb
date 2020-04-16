@@ -3,7 +3,7 @@ require "test_helper"
 class ConfigurationTest < Minitest::Test
   describe "#encoded_repo_url" do
     it "Base64 encodes the repo_url" do
-      configuration = SimplecovPostFormatter.configuration
+      configuration = SimplecovBadger.configuration
 
       assert_equal "www.test-repo.com", Base64.urlsafe_decode64(configuration.encoded_repo_url)
     end
@@ -11,21 +11,21 @@ class ConfigurationTest < Minitest::Test
 
   describe "default setup" do
     it "has a default for post url" do
-      configuration = SimplecovPostFormatter::Configuration.new
+      configuration = SimplecovBadger::Configuration.new
 
       assert_equal configuration.post_url, "coverage.traels.it/badges"
     end
 
     it "finds the repo_url from the project's git repo" do
-      configuration = SimplecovPostFormatter::Configuration.new
+      configuration = SimplecovBadger::Configuration.new
 
-      assert_equal "https://github.com/traels-it/simplecov-post-formatter.git", configuration.repo_url
+      assert_equal "https://github.com/traels-it/simplecov_badger.git", configuration.repo_url
     end
 
     it "has a run_when lamda, that only resolves to true, when in the master git branch" do
       skip "this test only works on the master branch"
 
-      configuration = SimplecovPostFormatter::Configuration.new
+      configuration = SimplecovBadger::Configuration.new
 
       assert configuration.run_when.call
     end

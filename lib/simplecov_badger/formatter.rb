@@ -1,10 +1,10 @@
-module SimplecovPostFormatter
+module SimplecovBadger
   class Formatter
     attr_reader :config
 
     def initialize(output = nil)
       @output = output || STDOUT
-      @config = SimplecovPostFormatter.configuration
+      @config = SimplecovBadger.configuration
     end
 
     def format(result)

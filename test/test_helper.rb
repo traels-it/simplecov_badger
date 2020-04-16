@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
-require "simplecov_post_formatter"
+require "simplecov_badger"
 require "minitest/autorun"
 require 'minitest/unit'
 require "mocha/minitest"
@@ -9,12 +9,12 @@ SimpleCov.start do
   SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
     [
       SimpleCov::Formatter::HTMLFormatter,
-      SimplecovPostFormatter::Formatter
+      SimplecovBadger::Formatter
     ]
   )
 end
 
-SimplecovPostFormatter.configure do |config|
+SimplecovBadger.configure do |config|
   config.post_url = "www.test-post.com"
   config.repo_url = "www.test-repo.com"
   config.run_when = -> { true }

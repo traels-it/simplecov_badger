@@ -1,4 +1,4 @@
-# SimplecovPostFormatter
+# SimplecovBadger
 This gem is a formatter for SimpleCov. It sends the total test coverage from SimpleCov to a url via a post request.
 It is heavily inspired by the formatter in MarcGrimme's simplecov-small-badge: https://github.com/MarcGrimme/simplecov-small-badge
 
@@ -7,7 +7,7 @@ It is heavily inspired by the formatter in MarcGrimme's simplecov-small-badge: h
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'simplecov-post-formatter'
+gem 'simplecov_badger'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install simplecov-post-formatter
+    $ gem install simplecov_badger
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simplecov-post-formatter.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/simplecov_badger.
 
 
 ## License

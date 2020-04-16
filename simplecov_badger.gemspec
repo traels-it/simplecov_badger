@@ -1,14 +1,14 @@
-require_relative 'lib/simplecov_post_formatter/version'
+require_relative 'lib/simplecov_badger/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "simplecov-post-formatter"
-  spec.version       = SimplecovPostFormatter::VERSION
+  spec.name          = "simplecov_badger"
+  spec.version       = SimplecovBadger::VERSION
   spec.authors       = ["Nicolai Bach Woller"]
   spec.email         = ["woller@traels.it"]
 
   spec.summary       = %q{A small gem that posts simplecovs test coverage to a web service.}
   spec.description   = %q{A small gem that posts simplecovs test coverage to a web service.}
-  spec.homepage      = "https://github.com/traels-it/simplecov-post-formatter"
+  spec.homepage      = "https://github.com/traels-it/simplecov_badger"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
