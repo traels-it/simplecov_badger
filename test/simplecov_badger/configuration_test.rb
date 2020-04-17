@@ -19,7 +19,7 @@ class ConfigurationTest < Minitest::Test
     it "finds the repo_url from the project's git repo" do
       configuration = SimplecovBadger::Configuration.new
 
-      assert_equal "https://github.com/traels-it/simplecov_badger.git", configuration.repo_url
+      assert_equal "https://github.com/traels-it/simplecov_badger.git\n", configuration.repo_url
     end
 
     it "has a run_if lamda" do

@@ -3,7 +3,7 @@ module SimplecovBadger
     def self.options
       {
         post_url: "coverage.traels.it/badges",
-        repo_url: `git remote -v`.split(" ")[1],
+        repo_url: `git config --get remote.origin.url`,
         run_if: -> { `git rev-parse --abbrev-ref HEAD` == "master\n" }
       }
     end

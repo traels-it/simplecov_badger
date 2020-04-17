@@ -43,12 +43,12 @@ The gem comes with a standard configuration. If you want to override any of thes
 # this is the standard configuration
 SimplecovBadger.configure do |config|
   config.post_url = "coverage.traels.it/badges",
-  config.repo_url = `git remote -v`.split(" ")[1],
+  config.repo_url = `git config --get remote.origin.url`,
   config.run_if = -> { `git rev-parse --abbrev-ref HEAD` == "master\n" }
 end
 ```
 Changing the `post_url` changes where the gem posts the coverage to and as a result you will have to make a service for drawing badges yourself.
-The `repo_url` defaults to the git remote of the project you work on.
+The `repo_url` defaults to the git repo's origin url.
 The `run_if` defaults to a lambda, that returns true if your current branch is master. This means the badge is only updated, when the test suite is run on the master branch. If replaced, it should be with another lambda that returns true whenever you want the badge updated.
 
 ## Development
