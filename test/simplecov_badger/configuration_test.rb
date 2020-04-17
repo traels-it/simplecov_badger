@@ -22,12 +22,12 @@ class ConfigurationTest < Minitest::Test
       assert_equal "https://github.com/traels-it/simplecov_badger.git", configuration.repo_url
     end
 
-    it "has a run_when lamda, that only resolves to true, when in the master git branch" do
+    it "has a run_if lamda, that only resolves to true, when in the master git branch" do
       skip "this test only works on the master branch"
 
       configuration = SimplecovBadger::Configuration.new
 
-      assert configuration.run_when.call
+      assert configuration.run_if.call
     end
   end
 end
