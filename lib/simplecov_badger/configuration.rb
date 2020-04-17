@@ -1,5 +1,5 @@
 module SimplecovBadger
-  class Configuration
+  class Configuration < OpenStruct
     def self.options
       {
         post_url: "coverage.traels.it/badges",
@@ -8,13 +8,8 @@ module SimplecovBadger
       }
     end
 
-    options.keys.each do |opt|
-      define_method(opt) { instance_variable_get "@#{opt}" }
-      define_method("#{opt}=") { |val| instance_variable_set("@#{opt}", val) }
-    end
-
-    def initialize(**opts)
-      SimplecovBadger::Configuration.options.merge(opts).each { |opt, v| send(:"#{opt}=", v) }
+    def initialize
+      super(self.class.options)
     end
 
     def encoded_repo_url
