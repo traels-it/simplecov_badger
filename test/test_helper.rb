@@ -7,7 +7,7 @@ require "minitest/autorun"
 require 'minitest/unit'
 require "mocha/minitest"
 
-SimplecovBadger.configure do |config|
+SimpleCov::Badger.configure do |config|
   config.post_url = "www.test-post.com"
   config.repo_url = "www.test-repo.com"
   config.run_if = -> { false }

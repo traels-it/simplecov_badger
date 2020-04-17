@@ -1,4 +1,4 @@
-module SimplecovBadger
+module SimpleCov::Badger
   class Configuration < OpenStruct
     def self.options
       {
@@ -13,7 +13,7 @@ module SimplecovBadger
     end
 
     def encoded_repo_url
-      raise SimplecovBadger::Error, "repo_url is nil" if repo_url.nil?
+      raise SimpleCov::Badger::Error, "repo_url is nil" if repo_url.nil?
 
       Base64.urlsafe_encode64(repo_url)
     end

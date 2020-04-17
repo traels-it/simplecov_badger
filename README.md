@@ -1,4 +1,4 @@
-# SimplecovBadger
+# SimpleCov::Badger
 This gem is a formatter for SimpleCov. It sends the total test coverage from SimpleCov to a url via a post request.
 It is heavily inspired by the formatter in MarcGrimme's simplecov-small-badge: https://github.com/MarcGrimme/simplecov-small-badge
 The gem is connected with our simplecov badge service for rendering badge .svgs. See more at: https://coverage.traels.it
@@ -21,14 +21,14 @@ Or install it yourself as:
 
 ## Usage
 
-There are very few things to do, before you can use the gem. The only necessary setup is to add the `SimplecovBadger::Formatter` to `SimpleCov`'s formatters in the same place you start `SimpleCov`:
+There are very few things to do, before you can use the gem. The only necessary setup is to add the `SimpleCov::Badger::Formatter` to `SimpleCov`'s formatters in the same place you start `SimpleCov`:
 
 ```ruby
 SimpleCov.start do
   SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
     [
       SimpleCov::Formatter::HTMLFormatter,
-      SimplecovBadger::Formatter # <-- this one
+      SimpleCov::Badger::Formatter # <-- this one
     ]
   )
 end
@@ -41,7 +41,7 @@ The gem comes with a standard configuration. If you want to override any of thes
 
 ```ruby
 # this is the standard configuration
-SimplecovBadger.configure do |config|
+SimpleCov::Badger.configure do |config|
   config.post_url = "coverage.traels.it/badges",
   config.repo_url = `git config --get remote.origin.url`,
   config.run_if = -> { `git rev-parse --abbrev-ref HEAD` == "master\n" }

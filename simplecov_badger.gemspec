@@ -2,12 +2,12 @@ require_relative 'lib/simplecov_badger/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "simplecov_badger"
-  spec.version       = SimplecovBadger::VERSION
+  spec.version       = SimpleCov::Badger::VERSION
   spec.authors       = ["Nicolai Bach Woller"]
   spec.email         = ["woller@traels.it"]
 
   spec.summary       = %q{A small gem that posts simplecovs test coverage to a web service.}
-  spec.description   = %q{A small gem that posts simplecovs test coverage to a web service.}
+  spec.description   = %q{A small gem that posts simplecovs test coverage to a web service. We've built a web service for rendering coverage badge svgs too. You can find it at coverage.traels.it}
   spec.homepage      = "https://github.com/traels-it/simplecov_badger"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")

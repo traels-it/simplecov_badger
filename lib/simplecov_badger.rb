@@ -4,14 +4,16 @@ require "simplecov_badger/configuration"
 require "base64"
 require "rest-client"
 
-module SimplecovBadger
-  class Error < StandardError; end
+module SimpleCov
+  module Badger
+    class Error < StandardError; end
 
-  def self.configure
-    yield configuration
-  end
+    def self.configure
+      yield configuration
+    end
 
-  def self.configuration
-    @configuration ||= Configuration.new
+    def self.configuration
+      @configuration ||= Configuration.new
+    end
   end
 end
