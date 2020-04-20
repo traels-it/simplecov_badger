@@ -13,7 +13,7 @@ class ConfigurationTest < Minitest::Test
     it "has a default for post url" do
       configuration = SimpleCov::Badger::Configuration.new
 
-      assert_equal configuration.post_url, "coverage.traels.it/badges"
+      assert_equal configuration.post_url, "https://coverage.traels.it/badges"
     end
 
     it "finds the repo_url from the project's git repo" do

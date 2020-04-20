@@ -2,7 +2,7 @@ module SimpleCov::Badger
   class Configuration < OpenStruct
     def self.options
       {
-        post_url: "coverage.traels.it/badges",
+        post_url: "https://coverage.traels.it/badges",
         repo_url: `git config --get remote.origin.url`,
         run_if: -> { `git rev-parse --abbrev-ref HEAD` == "master\n" }
       }

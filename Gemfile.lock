@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simplecov_badger (0.0.1)
+    simplecov_badger (0.0.2)
       rest-client (~> 2.1.0)
       simplecov (~> 0.18.5)
 
