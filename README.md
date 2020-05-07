@@ -43,7 +43,7 @@ The gem comes with a standard configuration. If you want to override any of thes
 # this is the standard configuration
 SimpleCov::Badger.configure do |config|
   config.post_url = "coverage.traels.it/badges",
-  config.repo_url = `git config --get remote.origin.url`,
+  config.repo_url = `git config --get remote.origin.url`.strip,
   config.run_if = -> { `git rev-parse --abbrev-ref HEAD` == "master\n" }
 end
 ```

@@ -28,4 +28,12 @@ class ConfigurationTest < Minitest::Test
       assert configuration.run_if.lambda?
     end
   end
+
+  describe "#badge_url" do
+    it "returns the full url to the badge (on the assumption that the configuration conforms to our standard)" do
+      configuration = SimpleCov::Badger::Configuration.new
+
+      assert_equal "https://coverage.traels.it/badges/aHR0cHM6Ly9naXRodWIuY29tL3RyYWVscy1pdC9zaW1wbGVjb3ZfYmFkZ2VyLmdpdA==", configuration.badge_url
+    end
+  end
 end

@@ -17,5 +17,9 @@ module SimpleCov::Badger
 
       Base64.urlsafe_encode64(repo_url)
     end
+
+    def badge_url
+      "#{post_url}/#{encoded_repo_url}"
+    end
   end
 end

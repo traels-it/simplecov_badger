@@ -12,7 +12,7 @@ class FormatterTest < Minitest::Test
 
   describe "#format" do
     it "sends a post request to the post_url with a total coverage result" do
-      fake_config = stub(post_url: "fake-url", encoded_repo_url: "3nC0ded", run_if: stub(call: true))
+      fake_config = stub(post_url: "fake-url", encoded_repo_url: "3nC0ded", run_if: stub(call: true), badge_url: "fake-url/3nC0ded")
       formatter = SimpleCov::Badger::Formatter.new
       formatter.stubs(config: fake_config)
       RestClient.expects(:post).with(formatter.config.post_url, { percentage: 92.43, repo_url: formatter.config.encoded_repo_url })

@@ -13,6 +13,8 @@ module SimpleCov::Badger
           config.post_url,
           { percentage: result.source_files.covered_percent.round(2), repo_url: config.encoded_repo_url }
         )
+
+        puts "SimpleCov::Badger: Your badge can be found at: #{config.badge_url}"
       end
     end
   end
