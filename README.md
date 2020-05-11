@@ -36,6 +36,11 @@ SimpleCov.start do
 end
 ```
 
+And then setting the token you received from the install rake task in an env somewhere:
+```ruby
+ENV["SIMPLECOV_BADGER_TOKEN"] = "Example_Token"
+````
+
 After running your test suite on your master branch, a url for your badge will be printed in the console.
 Subsequent runs will update the badge on the same url.
 
