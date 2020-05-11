@@ -4,7 +4,8 @@ module SimpleCov::Badger
       {
         post_url: "https://coverage.traels.it/badges",
         repo_url: `git config --get remote.origin.url`.strip,
-        run_if: -> { `git rev-parse --abbrev-ref HEAD` == "master\n" }
+        run_if: -> { `git rev-parse --abbrev-ref HEAD` == "master\n" },
+        token: ENV["SIMPLECOV_BADGER_TOKEN"]
       }
     end
 
