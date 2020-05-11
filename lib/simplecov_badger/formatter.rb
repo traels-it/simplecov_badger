@@ -9,9 +9,9 @@ module SimpleCov::Badger
 
     def format(result)
       if config.run_if.call
-        RestClient.post(
-          config.post_url,
-          { percentage: result.source_files.covered_percent.round(2), repo_url: config.encoded_repo_url }
+        RestClient.patch(
+          config.badge_url,
+          { percentage: result.source_files.covered_percent.round(2), token: config.token }
         )
 
         puts "SimpleCov::Badger: Your badge can be found at: #{config.badge_url}"

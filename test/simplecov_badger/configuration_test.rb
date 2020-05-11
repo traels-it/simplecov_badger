@@ -27,6 +27,13 @@ class ConfigurationTest < Minitest::Test
 
       assert configuration.run_if.lambda?
     end
+
+    it "looks in an env variable for authentication token" do
+      ENV["SIMPLECOV_BADGER_TOKEN"] = "something"
+      configuration = SimpleCov::Badger::Configuration.new
+
+      assert_equal "something", configuration.token
+    end
   end
 
   describe "#badge_url" do
