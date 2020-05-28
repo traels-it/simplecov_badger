@@ -4,10 +4,12 @@ The gem is connected with our simplecov badge service for rendering badge .svgs.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's Gemfile in the test, development group:
 
 ```ruby
-gem 'simplecov_badger'
+group :development, :test do
+  gem 'simplecov_badger'
+end
 ```
 
 And then execute:
@@ -19,6 +21,7 @@ Or install it yourself as:
     $ gem install simplecov_badger
 
 Then run
+
     $ bundle exec rake simplecov_badger:install
 
 ## Usage
@@ -36,10 +39,15 @@ SimpleCov.start do
 end
 ```
 
-And then setting the token you received from the install rake task in an env somewhere:
+And then setting the token you received from the install rake task in an env somewhere, for example by using the [dotenv](https://rubygems.org/gems/dotenv) gem:
+
+If you use rails we recommend setting the token in the [credentials](https://guides.rubyonrails.org/security.html#custom-credentials) instead and conf.
 ```ruby
-ENV["SIMPLECOV_BADGER_TOKEN"] = "Example_Token"
-````
+# in config/initializers/simplecov_badger.rb
+SimpleCov::Badger.configure do |config|
+  config.token = Rails.application.credentials.simplecov_badger[:token]
+end
+```
 
 After running your test suite on your master branch, a url for your badge will be printed in the console.
 Subsequent runs will update the badge on the same url.
