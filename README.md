@@ -1,6 +1,7 @@
 # SimpleCov::Badger
 This gem is a formatter for SimpleCov. It sends the total test coverage from SimpleCov to a url via a post request.
 The gem is connected with our simplecov badge service for rendering badge .svgs. See more at: https://coverage.traels.it
+The badge can then be used in your readme.
 
 ## Installation
 
@@ -29,6 +30,9 @@ Then run
 There are very few things to do, before you can use the gem. The only necessary setup is to add the `SimpleCov::Badger::Formatter` to `SimpleCov`'s formatters in the same place you start `SimpleCov`:
 
 ```ruby
+require "simplecov"
+require "simplecov_badger"
+
 SimpleCov.start do
   SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new(
     [
@@ -67,6 +71,16 @@ Changing the `post_url` changes where the gem posts the coverage to and as a res
 The `repo_url` defaults to the git repo's origin url.
 The `run_if` defaults to a lambda, that returns true if your current branch is master. This means the badge is only updated, when the test suite is run on the master branch. If replaced, it should be with another lambda that returns true whenever you want the badge updated.
 `token` is used when updating your badge with a new coverage. It defaults to reading from an env variable. When running the install rake task, a token is saved at your projects root in a file called `.simplecov_badger_auth_token`. It is recommended to set this token as an env variable, when not running Rails. If you do use Rails, set the token in your test credentials and configure to read from there instead. Should you lose your token, there is currently no recovery process, but you can configure your repo_url to something else and run the install task again to get a new token.
+
+Now every time your test suites is run on your master branch, a new badge is generated. A link to this badge can be found in the test output
+```shell
+  SimpleCov::Badger: Your badge can be found at: https://coverage.traels.it/badges/some_base_64_encoded_string
+```
+Using markdown, the badge can be inserted like this:
+```markdown
+  ![SimpleCov coverage](https://coverage.traels.it/badges/some_base_64_encoded_string)
+```
+
 
 ## Development
 
