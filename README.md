@@ -48,8 +48,10 @@ And then setting the token you received from the install rake task in an env som
 If you use rails we recommend setting the token in the [credentials](https://guides.rubyonrails.org/security.html#custom-credentials) instead and conf.
 ```ruby
 # in config/initializers/simplecov_badger.rb
-SimpleCov::Badger.configure do |config|
-  config.token = Rails.application.credentials.simplecov_badger[:token]
+if Module.const_defined? "SimpleCov"
+  SimpleCov::Badger.configure do |config|
+    config.token = Rails.application.credentials.simplecov_badger[:token]
+  end
 end
 ```
 
