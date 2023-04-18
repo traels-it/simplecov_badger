@@ -6,6 +6,7 @@ require "simplecov_badger"
 require "minitest/autorun"
 require 'minitest/unit'
 require "mocha/minitest"
+require "debug"
 
 SimpleCov::Badger.configure do |config|
   config.post_url = "www.test-post.com"
@@ -16,4 +17,3 @@ end
 def mock_result(total_cov)
   stub(source_files: stub(covered_percent: total_cov))
 end
-
