@@ -11,14 +11,6 @@ blocks:
   - name: Tests
     task:
       jobs:
-      - name: Ruby 2.6
-        commands:
-          - checkout
-          - sem-version ruby 2.6
-          - cache restore
-          - bundle install --path vendor/bundle
-          - cache store
-          - bundle exec rake test
       - name: Ruby 2.7
         commands:
           - checkout
