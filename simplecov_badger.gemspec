@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   # dependencies
-  spec.add_dependency "simplecov", "~> 0.18.5"
+  spec.add_dependency "simplecov", ">= 0.18.5"
   spec.add_dependency "rest-client", "~> 2.1.0"
 
   spec.add_development_dependency "m", "~> 1.5.1"

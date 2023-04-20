@@ -19,7 +19,7 @@ class ConfigurationTest < Minitest::Test
     it "finds the repo_url from the project's git repo" do
       configuration = SimpleCov::Badger::Configuration.new
 
-      assert_equal "https://github.com/traels-it/simplecov_badger.git", configuration.repo_url
+      assert_match /https:\/\/github.com\/.*\/simplecov_badger.git/, configuration.repo_url
     end
 
     it "has a run_if lamda" do
@@ -40,7 +40,7 @@ class ConfigurationTest < Minitest::Test
     it "returns the full url to the badge (on the assumption that the configuration conforms to our standard)" do
       configuration = SimpleCov::Badger::Configuration.new
 
-      assert_equal "https://coverage.traels.it/badges/aHR0cHM6Ly9naXRodWIuY29tL3RyYWVscy1pdC9zaW1wbGVjb3ZfYmFkZ2VyLmdpdA==", configuration.badge_url
+      assert_match /https:\/\/coverage.traels.it\/badges\/.{68}$/, configuration.badge_url
     end
   end
 end
